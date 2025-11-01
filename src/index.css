@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* India-inspired color palette - Saffron, Green, Earth tones */
+    --background: 40 25% 97%;
+    --foreground: 30 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Saffron/Orange primary color (Indian flag inspired) */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 25 100% 65%;
+
+    /* Green for success (Indian flag inspired) */
+    --secondary: 140 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 30 10% 40%;
+
+    /* Warm earth accent */
+    --accent: 30 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Red for warnings */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom semantic tokens */
+    --success: 140 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 100% 50%;
+    --warning-foreground: 30 15% 15%;
+    --info: 210 90% 55%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 100% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(140 70% 45%), hsl(140 60% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 25% 97%), hsl(25 30% 90%));
+
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 30 15% 15%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 30 15% 15%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 30 20% 10%;
+    --foreground: 40 15% 95%;
+
+    --card: 30 20% 12%;
+    --card-foreground: 40 15% 95%;
+
+    --popover: 30 20% 12%;
+    --popover-foreground: 40 15% 95%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 25 100% 65%;
+
+    --secondary: 140 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 30 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 25 95% 53%;
+
+    --success: 140 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 100% 50%;
+    --warning-foreground: 30 15% 15%;
+    --info: 210 90% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 30 20% 10%;
+    --sidebar-foreground: 40 15% 95%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 15% 95%;
+    --sidebar-border: 30 15% 20%;
+    --sidebar-ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Large text for accessibility */
+  html {
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  /* High contrast focus rings */
+  *:focus-visible {
+    @apply outline-none ring-4 ring-primary ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Gradient utilities */
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+}

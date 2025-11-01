@@ -15,7 +15,6 @@ Build/preview:
 
 ```sh
 npm run build
-npm run preview
 ```
 
 ## Tech Stack
